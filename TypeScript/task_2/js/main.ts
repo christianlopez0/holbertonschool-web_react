@@ -60,7 +60,16 @@ function isDirector(employee: Director | Teacher): employee is Director {
     }
   }
   
-  // Example usage:
-  console.log(executeWork(createEmployee(200)));   // Getting to work
-  console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
-  
+// String literal type for Subjects
+type Subjects = 'Math' | 'History';
+
+// Function to teach a class based on the subject
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  return ''; // This line is technically unreachable but included for completeness
+}
+
