@@ -24,6 +24,34 @@ interface Teacher {
     return `${firstName[0]}. ${lastName}`;
   };
   
+  // Interface for StudentClass
+  interface Student {
+    firstName: string;
+    lastName: string;
+    workOnHomework(): string;
+    displayName(): string;
+  }
+  
+  // Class implementation
+  class StudentClass implements Student {
+    firstName: string;
+    lastName: string;
+  
+    constructor(firstName: string, lastName: string) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+  
+    workOnHomework(): string {
+      return "Currently working";
+    }
+  
+    displayName(): string {
+      return this.firstName;
+    }
+  }
+  
+  // Example usage
   const teacher3: Teacher = {
     firstName: 'John',
     lastName: 'Doe',
@@ -46,4 +74,9 @@ interface Teacher {
   
   // Test the printTeacher function
   console.log(printTeacher("John", "Doe")); // Output: J. Doe
+  
+  // Create a StudentClass instance and test methods
+  const student1 = new StudentClass("Jane", "Smith");
+  console.log(student1.displayName()); // Output: Jane
+  console.log(student1.workOnHomework()); // Output: Currently working
   
