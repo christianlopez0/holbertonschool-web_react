@@ -14,6 +14,16 @@ interface Teacher {
     numberOfReports: number; // required property
   }
   
+  // Interface for printTeacher function
+  interface printTeacherFunction {
+    (firstName: string, lastName: string): string; // function signature
+  }
+  
+  // Function implementation
+  const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName[0]}. ${lastName}`;
+  };
+  
   const teacher3: Teacher = {
     firstName: 'John',
     lastName: 'Doe',
@@ -33,4 +43,7 @@ interface Teacher {
   };
   
   console.log(director1);
+  
+  // Test the printTeacher function
+  console.log(printTeacher("John", "Doe")); // Output: J. Doe
   
